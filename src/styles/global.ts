@@ -15,6 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px ${(props) => props.theme["primary-600"]};
   }
   body {
-    background-color: ${(props) => props.theme["base-900"]};
+    background-color: ${(props) => props.theme["base-100"]};
   }
 `;
