@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TEXT_S } from "../../styles/variables";
 import { NavLink } from "react-router-dom";
+import { MapPin } from "phosphor-react";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -41,6 +42,10 @@ export const StyledShoppingCartLink = styled(NavLink).attrs((props) => ({
 //     color: ${(props) => props.theme["primary-200"]};
 //   }
 // `;
+
+export const StyledMapPinIcon = styled(MapPin)`
+  color: ${(props) => props.theme["secondary-500"]};
+`;
 
 export const ActionsContainer = styled.div`
   display: flex;

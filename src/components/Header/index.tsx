@@ -1,9 +1,10 @@
-import { MapPin, ShoppingCart } from "phosphor-react";
+import { ShoppingCart } from "phosphor-react";
 import logo from "../../assets/logo.svg";
 import {
   ActionsContainer,
   HeaderContainer,
   LocationButton,
+  StyledMapPinIcon,
   StyledShoppingCartLink,
 } from "./styles";
 
@@ -13,7 +14,7 @@ export function Header() {
       <img src={logo} alt="logotipo" />
       <ActionsContainer>
         <LocationButton>
-          <MapPin size="1.375rem" weight="fill" color="#8047f8" />
+          <StyledMapPinIcon size="1.375rem" weight="fill" />
           Porto Alegre, RS
         </LocationButton>
         <nav>
