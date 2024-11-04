@@ -13,6 +13,7 @@ export const HeaderContainer = styled.header`
 
   img[src$="logo.svg"] {
     height: 2.5rem;
+    display: block;
   }
 `;
 
