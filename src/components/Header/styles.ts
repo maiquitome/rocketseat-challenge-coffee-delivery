@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TEXT_S } from "../../styles/variables";
+import { NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -12,16 +13,34 @@ export const HeaderContainer = styled.header`
   img[src$="logo.svg"] {
     height: 2.5rem;
   }
+`;
 
-  a {
-    text-decoration: none;
-    background-color: ${(props) => props.theme["primary-200"]};
-    padding: 0.5rem;
-    line-height: 0;
-    display: block;
-    border-radius: 0.5rem;
+export const StyledShoppingCartLink = styled(NavLink).attrs((props) => ({
+  className: props.className,
+}))`
+  text-decoration: none;
+  background-color: ${(props) => props.theme["primary-200"]};
+  padding: 0.5rem;
+  line-height: 0;
+  display: block;
+  border-radius: 0.5rem;
+  .shoppingCartIcon {
+    color: ${(props) => props.theme["primary-800"]};
+  }
+  &:hover {
+    background-color: ${(props) => props.theme["primary-800"]};
+    .shoppingCartIcon {
+      color: ${(props) => props.theme["primary-200"]};
+    }
   }
 `;
+
+// export const StyledShoppingCart = styled(ShoppingCart)`
+//   color: ${(props) => props.theme["primary-800"]};
+//   &:hover {
+//     color: ${(props) => props.theme["primary-200"]};
+//   }
+// `;
 
 export const ActionsContainer = styled.div`
   display: flex;

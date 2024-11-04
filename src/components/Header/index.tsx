@@ -1,7 +1,11 @@
 import { MapPin, ShoppingCart } from "phosphor-react";
 import logo from "../../assets/logo.svg";
-import { ActionsContainer, HeaderContainer, LocationButton } from "./styles";
-import { NavLink } from "react-router-dom";
+import {
+  ActionsContainer,
+  HeaderContainer,
+  LocationButton,
+  StyledShoppingCartLink,
+} from "./styles";
 
 export function Header() {
   return (
@@ -13,9 +17,13 @@ export function Header() {
           Porto Alegre, RS
         </LocationButton>
         <nav>
-          <NavLink to="/checkout" title="Checkout">
-            <ShoppingCart size="1.375rem" weight="fill" color="#764D0E" />
-          </NavLink>
+          <StyledShoppingCartLink to="/checkout" title="Checkout">
+            <ShoppingCart
+              className="shoppingCartIcon"
+              size="1.375rem"
+              weight="fill"
+            />
+          </StyledShoppingCartLink>
         </nav>
       </ActionsContainer>
     </HeaderContainer>
