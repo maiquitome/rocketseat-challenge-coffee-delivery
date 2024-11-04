@@ -7,11 +7,14 @@ import {
   StyledMapPinIcon,
   StyledShoppingCartLink,
 } from "./styles";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logo} alt="logotipo" />
+      <NavLink to="/" title="Home">
+        <img src={logo} alt="logotipo" />
+      </NavLink>
       <ActionsContainer>
         <LocationButton>
           <StyledMapPinIcon size="1.375rem" weight="fill" />
