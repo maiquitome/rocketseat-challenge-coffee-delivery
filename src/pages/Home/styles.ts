@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import heroBackground from "../../assets/hero-background.png";
-import { TITLE_XL, TEXT_L, TEXT_M } from "../../styles/variables";
+import { TITLE_XL, TEXT_L, TEXT_M, TITLE_L } from "../../styles/variables";
 
 export const Background = styled.div`
   /* background: url(${heroBackground}) center / 90rem 34rem no-repeat; */
@@ -56,5 +56,28 @@ export const HeroItems = styled.div`
       padding: 0.5rem;
       border-radius: 50%;
     }
+  }
+`;
+
+export const CoffeeList = styled.main`
+  padding-bottom: 9.8125rem;
+  > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+    @media (max-width: 1152px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 880px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  > h2 {
+    font: ${TITLE_L};
+    padding-bottom: 3.375rem;
   }
 `;
