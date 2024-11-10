@@ -1,3 +1,4 @@
+import { Counter } from "../../../../components/Counter";
 import { Buy, CoffeeCardStyled, Price, Tags } from "./styles";
 
 interface CoffeeCardProps {
@@ -27,6 +28,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
           <small>R$</small>
           {` ${coffee.price.toFixed(2)}`}
         </Price>
+        <Counter />
       </Buy>
     </CoffeeCardStyled>
   );

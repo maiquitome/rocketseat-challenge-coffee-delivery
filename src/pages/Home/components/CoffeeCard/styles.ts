@@ -45,6 +45,7 @@ export const Tags = styled.div`
 
 export const Buy = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-top: 2.0625rem;
 `;
 
