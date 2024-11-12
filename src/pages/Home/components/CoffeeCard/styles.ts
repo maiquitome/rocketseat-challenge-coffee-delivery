@@ -46,14 +46,37 @@ export const Tags = styled.div`
 export const Buy = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2.0625rem;
+  > div {
+    display: flex;
+    gap: 0.5rem;
+    > button {
+      border: 0;
+      padding: 0;
+      border-radius: 0.375rem;
+      background-color: ${(props) => props.theme["secondary-700"]};
+      width: 2.375rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: ${(props) => props.theme["secondary-500"]};
+      }
+      color: ${(props) => props.theme["base-200"]};
+    }
+  }
 `;
 
-export const Price = styled.div`
+export const Price = styled.span`
+  display: flex;
   font: ${TITLE_M};
   color: ${(props) => props.theme["base-700"]};
   > small {
     font: ${TEXT_S};
+    align-self: center;
+    padding-right: 0.2rem;
   }
 `;
 

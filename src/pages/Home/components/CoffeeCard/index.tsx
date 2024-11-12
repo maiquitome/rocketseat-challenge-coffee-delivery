@@ -1,3 +1,4 @@
+import { ShoppingCartSimple } from "phosphor-react";
 import { Counter } from "../../../../components/Counter";
 import { Buy, CoffeeCardStyled, Price, Tags } from "./styles";
 
@@ -26,9 +27,14 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
       <Buy>
         <Price>
           <small>R$</small>
-          {` ${coffee.price.toFixed(2)}`}
+          {coffee.price.toFixed(2)}
         </Price>
-        <Counter />
+        <div>
+          <Counter />
+          <button>
+            <ShoppingCartSimple size="1.375rem" weight="fill" />
+          </button>
+        </div>
       </Buy>
     </CoffeeCardStyled>
   );
