@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import {
   ConfirmOrderStyled,
   DeliveryDetailsStyled,
@@ -6,6 +7,26 @@ import {
 } from "./style";
 
 export function Checkout() {
+  const [cepValue, setCep] = useState("");
+
+  function applyCepMask(cep: string) {
+    const onlyNumbers = cep.replace(/\D/g, "");
+    const noMoreThanEightCharacters = onlyNumbers.substring(0, 8);
+    cep = noMoreThanEightCharacters;
+
+    if (cep.length === 8) {
+      cep = cep.replace(/^(\d{5})(\d{3})$/, "$1-$2");
+    }
+
+    return cep;
+  }
+
+  function setCepWithMask(event: ChangeEvent<HTMLInputElement>) {
+    const cepWithMask = applyCepMask(event.target.value);
+    console.log("cepWithMask", cepWithMask);
+    setCep(cepWithMask);
+  }
+
   return (
     <FormContainerStyled>
       <form action="">
@@ -17,7 +38,14 @@ export function Checkout() {
               <p>Informe o endereço onde deseja receber seu pedido</p>
 
               <div>
-                <input type="number" name="cep" id="cep" placeholder="CEP" />
+                <input
+                  type="text"
+                  name="cep"
+                  id="cep"
+                  placeholder="CEP"
+                  onChange={setCepWithMask}
+                  value={cepValue}
+                />
                 <input
                   type="text"
                   name="street"

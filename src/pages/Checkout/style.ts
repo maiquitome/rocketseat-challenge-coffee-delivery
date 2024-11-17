@@ -31,6 +31,15 @@ export const FormContainerStyled = styled(LayoutContainer)`
         grid-template-columns: 1fr 1fr 10.7142857143%;
         input {
           border: none;
+          font: ${TEXT_S};
+          color: ${(props) => props.theme["base-700"]};
+          background-color: ${(props) => props.theme["base-300"]};
+          border: 0.0625rem solid ${(props) => props.theme["base-400"]};
+          border-radius: 0.25rem;
+          padding: 0.75rem;
+          &::placeholder {
+            color: ${(props) => props.theme["base-600"]};
+          }
           &:first-child {
             grid-column-start: 1;
             grid-column-end: 2;
