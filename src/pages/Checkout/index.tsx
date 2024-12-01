@@ -5,7 +5,7 @@ import {
   FormContainerStyled,
   PaymentStyled,
 } from "./style";
-import { MapPinLine } from "phosphor-react";
+import { CurrencyDollar, MapPinLine } from "phosphor-react";
 
 export function Checkout() {
   const [cepValue, setCep] = useState("");
@@ -84,10 +84,20 @@ export function Checkout() {
 
           <PaymentStyled>
             <fieldset>
-              <legend>Pagamento</legend>
-              <p>
-                O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </p>
+              <div>
+                <CurrencyDollar
+                  className="currencyDollarIcon"
+                  size="1.375rem"
+                />
+                <div>
+                  <legend>Pagamento</legend>
+                  <p>
+                    O pagamento é feito na entrega. Escolha a forma que deseja
+                    pagar
+                  </p>
+                </div>
+              </div>
+              <div></div>
             </fieldset>
           </PaymentStyled>
         </div>

@@ -33,6 +33,9 @@ export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
         .mapPinLineIcon {
           color: ${(props) => props.theme["primary-800"]};
         }
+        .currencyDollarIcon {
+          color: ${(props) => props.theme["secondary-500"]};
+        }
       }
       > div:last-child {
         display: grid;
