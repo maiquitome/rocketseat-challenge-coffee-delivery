@@ -87,7 +87,7 @@ export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
   @media (max-width: 70rem) {
     form {
       fieldset {
-        > div {
+        > div:last-child {
           display: flex;
           flex-direction: column;
         }
