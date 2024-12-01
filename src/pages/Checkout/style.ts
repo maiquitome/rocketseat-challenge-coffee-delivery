@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { LayoutContainer } from "../../layouts/DefaultLayout/styles";
 import { TEXT_M, TEXT_S, TITLE_XS } from "../../styles/variables";
 
-export const FormContainerStyled = styled(LayoutContainer)`
+export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
+  className: props.className,
+}))`
   form {
     display: grid;
     grid-template-columns: 57.1428571429% 1fr;
@@ -25,7 +27,14 @@ export const FormContainerStyled = styled(LayoutContainer)`
         color: ${(props) => props.theme["base-700"]};
         padding-bottom: 2rem;
       }
-      > div {
+      > div:first-child {
+        display: flex;
+        gap: 0.5rem;
+        .mapPinLineIcon {
+          color: ${(props) => props.theme["primary-800"]};
+        }
+      }
+      > div:last-child {
         display: grid;
         gap: 1rem;
         grid-template-columns: 1fr 1fr 10.7142857143%;

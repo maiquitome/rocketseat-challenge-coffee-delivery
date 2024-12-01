@@ -5,6 +5,7 @@ import {
   FormContainerStyled,
   PaymentStyled,
 } from "./style";
+import { MapPinLine } from "phosphor-react";
 
 export function Checkout() {
   const [cepValue, setCep] = useState("");
@@ -34,8 +35,13 @@ export function Checkout() {
           <h2>Complete seu pedido</h2>
           <DeliveryDetailsStyled>
             <fieldset>
-              <legend>Endereço de Entrega</legend>
-              <p>Informe o endereço onde deseja receber seu pedido</p>
+              <div>
+                <MapPinLine className="mapPinLineIcon" size="1.375rem" />
+                <div>
+                  <legend>Endereço de Entrega</legend>
+                  <p>Informe o endereço onde deseja receber seu pedido</p>
+                </div>
+              </div>
 
               <div>
                 <input
