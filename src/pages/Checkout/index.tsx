@@ -3,6 +3,7 @@ import {
   ConfirmOrderStyled,
   DeliveryDetailsStyled,
   FormContainerStyled,
+  ComplementInputWrapperStyled,
   PaymentStyled,
 } from "./style";
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
@@ -64,12 +65,15 @@ export function Checkout() {
                   id="number"
                   placeholder="Número"
                 />
-                <input
-                  type="text"
-                  name="complement"
-                  id="complement"
-                  placeholder="Complemento"
-                />
+                <ComplementInputWrapperStyled>
+                  <input
+                    type="text"
+                    name="complement"
+                    id="complement"
+                    placeholder="Complemento"
+                  />
+                  <span>Opcional</span>
+                </ComplementInputWrapperStyled>
                 <input
                   type="text"
                   name="neighbourhood"

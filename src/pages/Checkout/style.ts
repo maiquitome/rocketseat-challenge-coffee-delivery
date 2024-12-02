@@ -42,6 +42,7 @@ export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
         gap: 1rem;
         grid-template-columns: 1fr 1fr 10.7142857143%;
         input {
+          height: 2.625rem;
           border: none;
           font: ${TEXT_S};
           color: ${(props) => props.theme["base-700"]};
@@ -63,10 +64,6 @@ export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
           &:nth-child(3) {
             grid-column-start: 1;
             grid-column-end: 2;
-          }
-          &:nth-child(4) {
-            grid-column-start: 2;
-            grid-column-end: 4;
           }
           &:nth-child(5) {
             grid-column-start: 1;
@@ -106,6 +103,40 @@ export const CompleteYourOrder = styled.div``;
 
 export const DeliveryDetailsStyled = styled(CardStyled)`
   margin-bottom: 0.75rem;
+`;
+
+export const ComplementInputWrapperStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 0.0625rem solid ${(props) => props.theme["base-400"]};
+  border-radius: 0.25rem;
+  height: 2.625rem;
+  font: ${TEXT_S};
+  background-color: ${(props) => props.theme["base-300"]};
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+  position: relative;
+  > input {
+    border: 0 !important;
+    width: 100%;
+    height: 2.5rem !important;
+    padding-right: 5rem !important;
+  }
+  > span {
+    position: absolute;
+    left: 78%;
+    color: ${(props) => props.theme["base-600"]} !important;
+    font-style: italic !important;
+  }
+  @media (max-width: 70rem) {
+    > span {
+      left: 87%;
+    }
+  }
 `;
 
 export const PaymentStyled = styled(CardStyled)``;
