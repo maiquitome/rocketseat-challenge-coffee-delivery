@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { LayoutContainer } from "../../layouts/DefaultLayout/styles";
-import { TEXT_M, TEXT_S, TITLE_XS } from "../../styles/variables";
+import { BUTTON_M, TEXT_M, TEXT_S, TITLE_XS } from "../../styles/variables";
 
 export const FormContainerStyled = styled(LayoutContainer).attrs((props) => ({
   className: props.className,
@@ -144,4 +144,47 @@ export const PaymentStyled = styled(CardStyled)``;
 export const ConfirmOrderStyled = styled(CardStyled)`
   border-top-right-radius: 2.75rem;
   border-bottom-left-radius: 2.75rem;
+`;
+
+export const PaymentOptionsStyled = styled.div`
+  display: flex !important;
+  gap: 0.75rem;
+  > div {
+    /* width: 11.166875rem; */
+    width: 100%;
+    height: 3.1875rem;
+    background-color: ${(props) => props.theme["base-400"]};
+    border-radius: 0.375rem;
+
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 0.75rem;
+
+    color: ${(props) => props.theme["secondary-500"]};
+    position: relative;
+    > label {
+      font: ${BUTTON_M};
+      color: ${(props) => props.theme["base-700"]};
+      line-height: 0;
+    }
+    > input[type="radio"] {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      min-height: 100%;
+      padding: 0;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    &:has(input:checked) {
+      background-color: ${(props) => props.theme["secondary-200"]};
+      outline: solid 1px ${(props) => props.theme["secondary-500"]};
+      transition: linear 200ms;
+    }
+    &:hover {
+      background-color: ${(props) => props.theme["base-500"]};
+    }
+  }
 `;

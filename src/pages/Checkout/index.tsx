@@ -5,8 +5,15 @@ import {
   FormContainerStyled,
   ComplementInputWrapperStyled,
   PaymentStyled,
+  PaymentOptionsStyled,
 } from "./style";
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from "phosphor-react";
 
 export function Checkout() {
   const [cepValue, setCep] = useState("");
@@ -101,7 +108,39 @@ export function Checkout() {
                   </p>
                 </div>
               </div>
-              <div></div>
+
+              <PaymentOptionsStyled>
+                <div>
+                  <input
+                    type="radio"
+                    name="payment-option"
+                    id="credit-card-radio"
+                    value="credit-card"
+                  />
+                  <CreditCard size="1rem" />
+                  <label htmlFor="credit-card-radio">CARTÃO DE CRÉDITO</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="payment-option"
+                    id="debit-card-radio"
+                    value="debit-card"
+                  />
+                  <Bank size="1rem" />
+                  <label htmlFor="debit-card-radio">CARTÃO DE DÉBITO</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="payment-option"
+                    id="money-radio"
+                    value="money"
+                  />
+                  <Money size="1rem" />
+                  <label htmlFor="money-radio">DINHEIRO</label>
+                </div>
+              </PaymentOptionsStyled>
             </fieldset>
           </PaymentStyled>
         </div>
