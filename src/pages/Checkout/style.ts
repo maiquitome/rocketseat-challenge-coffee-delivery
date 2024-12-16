@@ -188,3 +188,5 @@ export const PaymentOptionsStyled = styled.div`
     }
   }
 `;
+
+export const SelectedCoffees = styled.div``;

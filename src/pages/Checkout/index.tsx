@@ -6,6 +6,7 @@ import {
   ComplementInputWrapperStyled,
   PaymentStyled,
   PaymentOptionsStyled,
+  SelectedCoffees,
 } from "./style";
 import {
   Bank,
@@ -14,6 +15,7 @@ import {
   MapPinLine,
   Money,
 } from "phosphor-react";
+import { SelectedCoffee } from "./components/SelectedCoffee";
 
 export function Checkout() {
   const [cepValue, setCep] = useState("");
@@ -144,12 +146,14 @@ export function Checkout() {
             </fieldset>
           </PaymentStyled>
         </div>
-        <div>
+        <SelectedCoffees>
           <h2>Cafés selecionados</h2>
           <ConfirmOrderStyled>
+            <SelectedCoffee />
+            <SelectedCoffee />
             <button>CONFIRMAR PEDIDO</button>
           </ConfirmOrderStyled>
-        </div>
+        </SelectedCoffees>
       </form>
     </FormContainerStyled>
   );
