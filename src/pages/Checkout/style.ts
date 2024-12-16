@@ -139,7 +139,14 @@ export const ComplementInputWrapperStyled = styled.div`
   }
 `;
 
-export const PaymentStyled = styled(CardStyled)``;
+export const PaymentStyled = styled(CardStyled)`
+  fieldset {
+    &:focus-within {
+      box-shadow: 0 0 0 2px ${(props) => props.theme["primary-600"]};
+      border-radius: 0.375rem;
+    }
+  }
+`;
 
 export const ConfirmOrderStyled = styled(CardStyled)`
   border-top-right-radius: 2.75rem;
